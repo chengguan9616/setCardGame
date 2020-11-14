@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            border:1px solid #ccc;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            width:25%;
+            border-radius: 20px;
+            height:99px;
+            margin:10px;
+        }
+        .wrapper:hover{
+            box-shadow: 0px 0px 20px #888888;
+        }
+        .inner{
+            display:flex;
+            justify-content: space-around;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+        img{
+            display:inline-block;
+            width:37px;
+            z-index: -1;
+        }
+        .active,.ad3{
+            box-shadow: 0px 0px 20px #888888;
+        }
+        .header{
+            display:flex;
+            justify-content: flex-end;
+            margin-right:40px;
+        }
+        .set{
+            border:none;
+            outline:none;
+            cursor: pointer;
+            border-radius: 3px; 
+	        background: #1E90FF; 
+            color:#fff;
+            width:50px;
+            height:20px;
+        }
+        #player{
+            height:20px;
+            border:none;
+            outline:none;
+            cursor: pointer;
+            border:1px solid #ccc;
+            border-radius: 3px; 
+            width:150px;
+            height:20px;
+        }
+        .hidden{
+            display:none!important;
+        }
+        #submit{
+            cursor: pointer;
+            border:0.5px solid #ccc;
+            padding:1px;
+        }
+        #button{
+            margin: 20px;
+            display:inline-block;
+            cursor: pointer;
+            border:0.5px solid #ccc;
+            padding:1px;
+        }
+        .one{
+            display:flex;
+            margin-right:25px;
+            width:60px;
+        }
+        #number{
+            display:inline-block;
+            height:61.34px;
+            line-height: 61.34px;
+        }
+        #showor{
+            margin: 20px;
+            display:inline-block;
+            cursor: pointer;
+            border:0.5px solid #ccc;
+            padding:1px;
+        }
+        .ranking{
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+        }
+        .timer{
+            margin-right:50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .return{
+            margin-right:50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header hidden">
+        <div class="return"><h3>RETURN</h3></div>
+        <div class="timer">Time:<h2 id="time"></h2></div>
+        <div class="ranking">
+            <div>player1:1</div>
+
+        </div>
+        
+        <div id="showor" >Does it contain set?</div>
+        <div class="one"><h5>surplus:</h5><span id="number">27</span></div>
+        <select name="" id="player">
+            <option value="1">player1</option>
+            <option value="2">player2</option>
+            <option value="3">player3</option>
+        </select>
+        <button class="set">SET</button>
+    </div>
+    <div class="firstPage">
+        <div><h5>name:</h5><span>Magic shape color card</span></div>
+        <div><h5>rules:</h5><a href="https://www.setgame.com/sites/default/files/instructions/SET%20INSTRUCTIONS%20-%20ENGLISH.pdf">RULES</a></div>
+        <div><h5>Number of players:</h5>    
+            <div id="playerlist"></div>    
+            <div><input id="playernumber" type="text"><span id="submit">SUBMIT</span></div>
+        </div>
+        <div><h5>model:</h5>
+            <select name="" id="model">
+                <option value="compete">compete</option>
+                <option value="practice">practice</option>
+            </select>
+        </div>
+        <div><h5>setting:</h5>
+            <div><span>Enable or disable a button which tells if there is a SET in the current deal:</span> 
+                <input type="radio" name="show" id="" value="YES" checked>YES<input type="radio" name="show" id="" value="NO">NO
+            </div>
+            <div><span>Enable or disable a button which shows a SET:</span> 
+                <input type="radio" name="show2" id="" value="YES" checked>YES<input type="radio" name="show2" id="" value="NO">NO
+            </div>
+            <div><span>Automatic or button which shows a SET:</span> 
+                <input type="radio" name="show3" id="" value="YES" checked>BUTTON<input type="radio" name="show3" id="" value="NO">AUTO
+            </div>
+        </div>
+        <div id="button">START</div>
+    </div>
+    <div class="inner">
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
